@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class MyHomePage extends StatefulWidget {
-   MyHomePage({super.key});
+  MyHomePage({super.key});
 
   int _counter1 = 0;
 
@@ -13,24 +13,51 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter2 = 100;
 
+  void addCounter() {
+    setState(() {
+      widget._counter1++;
+      _counter2++;
+    });
+    print(_counter2);
+    print(widget._counter1);
+  }
+
+  void removeCounter() {
+    setState(() {
+      widget._counter1--;
+      _counter2--;
+    });
+    print(_counter2);
+    print(widget._counter1);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Center(
         child: Text(
-          widget._counter1.toString(),
+          _counter2.toString(),
           style: const TextStyle(
-          fontSize: 30,
-        ),),
+            fontSize: 30,
+          ),
+        ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: 
-      (){
-        widget._counter1++;
-        _counter2++;
-        print(_counter2);
-        print(widget._counter1);
-      },
-      child: const Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+             addCounter();
+            },
+            child: const Icon(Icons.add),
+          ),
+          FloatingActionButton(
+            onPressed: () {
+             removeCounter();
+            },
+            child: const Icon(Icons.remove),
+          ),
+        ],
       ),
     );
   }
