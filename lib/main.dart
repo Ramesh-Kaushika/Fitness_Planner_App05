@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required, required this.title });
+  const MyHomePage({super.key, required, required this.title});
 
   final String title;
 
@@ -57,10 +57,17 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             ElevatedButton(
-            
-            onPressed: () {},
-            child: const Text('Profile'),
-          ),
+              onPressed: () {},
+              child: const Text('Profile'),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Profile'),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Profile'),
+            ),
           ],
         ),
       ),
