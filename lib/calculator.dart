@@ -1,29 +1,58 @@
 import 'package:flutter/material.dart';
 
 class MyCal extends StatefulWidget {
-   const MyCal({super.key});
+  const MyCal({super.key});
 
   @override
   State<MyCal> createState() => _MyCalState();
 }
 
 class _MyCalState extends State<MyCal> {
-
 //users enterd value
-final TextEditingController _oneController = TextEditingController();
-final TextEditingController _twoController = TextEditingController();
+  final TextEditingController _oneController = TextEditingController();
+  final TextEditingController _twoController = TextEditingController();
 
 //result
-int _result = 0;
+   int _result = 0;
 
 //methods
-void add(){
-  setState(() {
-    
-  });
-}
+  void add() {
+    setState(() {
+      int number1 = int.tryParse(_oneController.text) ?? 0;
+      int number2 = int.tryParse(_twoController.text) ?? 0;
 
-@override
+      _result = number1 + number2;
+    });
+  }
+
+  void remove() {
+    setState(() {
+      int number1 = int.tryParse(_oneController.text) ?? 0;
+      int number2 = int.tryParse(_twoController.text) ?? 0;
+
+      _result = number1 + number2;
+    });
+  }
+
+  void division() {
+    setState(() {
+      int number1 = int.tryParse(_oneController.text) ?? 0;
+      int number2 = int.tryParse(_twoController.text) ?? 0;
+
+      _result = number1 + number2;
+    });
+  }
+
+  void multiplication() {
+    setState(() {
+      int number1 = int.tryParse(_oneController.text) ?? 0;
+      int number2 = int.tryParse(_twoController.text) ?? 0;
+
+      _result = number1 + number2;
+    });
+  }
+
+  @override
   void dispose() {
     // TODO: implement dispose
     _oneController.dispose();
@@ -35,7 +64,7 @@ void add(){
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My Cal"), 
+        title: const Text("My Cal"),
         backgroundColor: Colors.yellow,
       ),
       body: Padding(
@@ -45,12 +74,11 @@ void add(){
             TextField(
               controller: _oneController,
               decoration: InputDecoration(
-                hintText: "Enter First Number",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                contentPadding: const EdgeInsets.all(20)
-              ),
+                  hintText: "Enter First Number",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  contentPadding: const EdgeInsets.all(20)),
             ),
             const SizedBox(
               height: 20,
@@ -58,19 +86,18 @@ void add(){
             TextField(
               controller: _twoController,
               decoration: InputDecoration(
-                hintText: "Enter Second Number",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                contentPadding: const EdgeInsets.all(20)
-              ),
+                  hintText: "Enter Second Number",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  contentPadding: const EdgeInsets.all(20)),
             ),
-             const SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            const Text("100",style: TextStyle(
-                fontSize: 50
-            ),
+             Text(
+              _result.toString(),
+              style: const TextStyle(fontSize: 50),
             )
           ],
         ),
@@ -81,17 +108,23 @@ void add(){
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            FloatingActionButton(onPressed: (){},
-            child: const Icon(Icons.add),
+            FloatingActionButton(
+              onPressed: () {
+                add();
+              },
+              child: const Icon(Icons.add),
             ),
-            FloatingActionButton(onPressed: (){},
-            child: const Icon(Icons.remove),
+            FloatingActionButton(
+              onPressed: () {},
+              child: const Icon(Icons.remove),
             ),
-            FloatingActionButton(onPressed: (){},
-            child: const Text("/"),
+            FloatingActionButton(
+              onPressed: () {},
+              child: const Text("/"),
             ),
-            FloatingActionButton(onPressed: (){},
-            child: const Text("X"),
+            FloatingActionButton(
+              onPressed: () {},
+              child: const Text("X"),
             ),
           ],
         ),
