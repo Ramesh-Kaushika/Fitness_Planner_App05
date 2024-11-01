@@ -30,7 +30,7 @@ class _MyCalState extends State<MyCal> {
       int number1 = int.tryParse(_oneController.text) ?? 0;
       int number2 = int.tryParse(_twoController.text) ?? 0;
 
-      _result = number1 + number2;
+      _result = number1 - number2;
     });
   }
 
@@ -39,7 +39,9 @@ class _MyCalState extends State<MyCal> {
       int number1 = int.tryParse(_oneController.text) ?? 0;
       int number2 = int.tryParse(_twoController.text) ?? 0;
 
-      _result = number1 + number2;
+
+      double div = number1 / number2;
+      _result = div.ceil();
     });
   }
 
@@ -48,7 +50,7 @@ class _MyCalState extends State<MyCal> {
       int number1 = int.tryParse(_oneController.text) ?? 0;
       int number2 = int.tryParse(_twoController.text) ?? 0;
 
-      _result = number1 + number2;
+      _result = number1 * number2;
     });
   }
 
@@ -115,15 +117,21 @@ class _MyCalState extends State<MyCal> {
               child: const Icon(Icons.add),
             ),
             FloatingActionButton(
-              onPressed: () {},
+              onPressed: () {
+                remove();
+              },
               child: const Icon(Icons.remove),
             ),
             FloatingActionButton(
-              onPressed: () {},
+              onPressed: () {
+                division();
+              },
               child: const Text("/"),
             ),
             FloatingActionButton(
-              onPressed: () {},
+              onPressed: () {
+                multiplication();
+              },
               child: const Text("X"),
             ),
           ],
