@@ -80,18 +80,3 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class _MyProfile extends StatefulWidget {
-  const _MyProfile({super.key, required this.name});
-
-  final String name;
-
-  @override
-  State<_MyProfile> createState() => __MyProfileState();
-}
-
-class __MyProfileState extends State<_MyProfile> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
