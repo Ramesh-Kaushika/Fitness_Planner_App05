@@ -1,18 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          "Profile",
-          style: TextStyle(
-            fontSize: 30,
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Center(
+            child: Text(
+              "Profile",
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
           ),
-        ),
+          ElevatedButton(onPressed: () {
+            GoRouter.of(context).go("/");
+          }, 
+          child: const Text("go to Profile"),
+          ),
+        ],
       ),
     );
   }
