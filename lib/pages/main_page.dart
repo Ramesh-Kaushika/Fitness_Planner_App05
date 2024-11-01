@@ -6,13 +6,18 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text(
-          "Home Page",
-          style: TextStyle(
-            fontSize: 30,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Text(
+              "Home Page",
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
