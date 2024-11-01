@@ -62,11 +62,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: () {},
-              child: const Text('Profile'),
+              child: const Text('Add Home'),
             ),
             ElevatedButton(
               onPressed: () {},
-              child: const Text('Profile'),
+              child: const Text('Add About'),
             ),
           ],
         ),
