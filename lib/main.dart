@@ -56,6 +56,11 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            ElevatedButton(
+            
+            onPressed: () {},
+            child: const Text('Profile'),
+          ),
           ],
         ),
       ),
@@ -69,7 +74,9 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class _MyProfile extends StatefulWidget {
-  const _MyProfile({super.key});
+  const _MyProfile({super.key, required this.name});
+
+  final String name;
 
   @override
   State<_MyProfile> createState() => __MyProfileState();
