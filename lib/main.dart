@@ -1,3 +1,4 @@
+import 'package:fitness_planner/calculator.dart';
 import 'package:fitness_planner/home_page_no_state.dart';
 import 'package:fitness_planner/home_page_withState.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: MyCal(),
     );
   }
 }
