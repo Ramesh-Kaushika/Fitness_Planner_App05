@@ -23,6 +23,11 @@ class ProfilePage extends StatelessWidget {
           }, 
           child: const Text("go to Profile"),
           ),
+           ElevatedButton(onPressed: () {
+            GoRouter.of(context).go("/profile/user");
+          }, 
+          child: const Text("go to nested User"),
+          ),
         ],
       ),
     );
