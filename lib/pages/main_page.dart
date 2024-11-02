@@ -49,6 +49,12 @@ class MainPage extends StatelessWidget {
             },
             child: const Text("go to Back Page"),
           ),
+          ElevatedButton(
+            onPressed: () {
+              GoRouter.of(context).push("/crud");
+            },
+            child: const Text("CRUD"),
+          ),
         ],
       ),
     );

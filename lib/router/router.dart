@@ -1,3 +1,4 @@
+import 'package:fitness_planner/crud_home_page.dart';
 import 'package:fitness_planner/data/person.dart';
 import 'package:fitness_planner/pages/back.dart';
 import 'package:fitness_planner/pages/login_page.dart';
@@ -102,6 +103,13 @@ class RouterClass {
         name: RouterNames.back,
         builder: (context, state) {
           return const BackPage();
+        },
+      ),
+       GoRoute(
+        path: "/crud",
+        name: "crud",
+        builder: (context, state) {
+          return const CrudHomePage();
         },
       )
     ],
