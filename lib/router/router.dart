@@ -1,3 +1,6 @@
+import 'package:fitness_planner/data/person.dart';
+import 'package:fitness_planner/pages/back.dart';
+import 'package:fitness_planner/pages/login_page.dart';
 import 'package:fitness_planner/pages/main_page.dart';
 import 'package:fitness_planner/pages/profile_page.dart';
 import 'package:fitness_planner/pages/user_det.dart';
@@ -18,6 +21,24 @@ class RouterClass {
         ),
       );
     },
+//redirect to login page is ufer is not login
+    redirect: (context, state) {
+      bool isUserLoggedIn = UserData.isUserLogedIn;
+
+      // Redirect to login page if the user is not logged in and trying to access a restricted page
+      if (!isUserLoggedIn && state.uri.toString() != '/login') {
+        return '/login';
+      }
+
+      // Redirect to home page if the user is logged in and trying to access the login page
+      if (isUserLoggedIn && state.uri.toString() == '/login') {
+        return '/';
+      }
+
+      // Otherwise, allow navigation to the requested route
+      return null;
+    },
+
     routes: [
       //Home Page
       GoRoute(
@@ -67,6 +88,20 @@ class RouterClass {
             userName: state.pathParameters['name']!,
             age: int.parse(state.pathParameters['userAge']!),
           );
+        },
+      ),
+      GoRoute(
+        path: "/login",
+        name: RouterNames.login,
+        builder: (context, state) {
+          return const LoginPage();
+        },
+      ),
+      GoRoute(
+        path: "/back",
+        name: RouterNames.back,
+        builder: (context, state) {
+          return const BackPage();
         },
       )
     ],
