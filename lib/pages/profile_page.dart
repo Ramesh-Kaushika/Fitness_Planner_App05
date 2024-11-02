@@ -21,7 +21,7 @@ class ProfilePage extends StatelessWidget {
           ElevatedButton(onPressed: () {
             GoRouter.of(context).go("/");
           }, 
-          child: const Text("go to Profile"),
+          child: const Text("go to Home Page"),
           ),
            ElevatedButton(onPressed: () {
             GoRouter.of(context).go("/profile/user");
