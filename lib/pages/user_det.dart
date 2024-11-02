@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class UserDetails extends StatelessWidget {
   final String userName;
-  const UserDetails({super.key, required this.userName});
+  final int age;
+  const UserDetails({super.key, required this.userName, required this.age});
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,7 @@ class UserDetails extends StatelessWidget {
           children: [
             const Text("This is User Details"),
             Text(userName),
+             Text(age.toString()),
           ],
         ),
       ),

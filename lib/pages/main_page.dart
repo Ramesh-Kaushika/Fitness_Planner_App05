@@ -18,20 +18,24 @@ class MainPage extends StatelessWidget {
               ),
             ),
           ),
-          ElevatedButton(onPressed: () {
-            GoRouter.of(context).go("/profile");
-          }, 
-          child: const Text("go to Profile"),
+          ElevatedButton(
+            onPressed: () {
+              GoRouter.of(context).go("/profile");
+            },
+            child: const Text("go to Profile"),
           ),
-            ElevatedButton(onPressed: () {
-            GoRouter.of(context).go("/profile/user");
-          }, 
-          child: const Text("go to nested User"),
+          ElevatedButton(
+            onPressed: () {
+              GoRouter.of(context).go("/profile/user");
+            },
+            child: const Text("go to nested User"),
           ),
-              ElevatedButton(onPressed: () {
-            GoRouter.of(context).go("/userdetails", extra: "Ramesh Kaushika");
-          }, 
-          child: const Text("go to nested User Details"),
+          ElevatedButton(
+            onPressed: () {
+              GoRouter.of(context).go("/userdetails",
+                  extra: {"name": "Ramesh Kaushika", "ageUser": 12,});
+            },
+            child: const Text("go to nested User Details"),
           ),
         ],
       ),
