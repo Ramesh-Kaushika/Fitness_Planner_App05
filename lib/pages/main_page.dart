@@ -1,3 +1,4 @@
+import 'package:fitness_planner/router/router_names.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,7 +21,7 @@ class MainPage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              GoRouter.of(context).go("/profile");
+              GoRouter.of(context).goNamed(RouterNames.profile);
             },
             child: const Text("go to Profile"),
           ),
