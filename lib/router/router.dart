@@ -44,16 +44,27 @@ class RouterClass {
           ),
         ],
       ),
+      //parameter passed extra
+      // GoRoute(
+      //   path: "/userdetails",
+      //   builder: (context, state) {
+      //     final name = (state.extra as Map<String, dynamic>)["name"] as String;
+
+      //     final ageUser = (state.extra as Map<String, dynamic>)["ageUser"] as int;
+
+      //     return UserDetails(
+      //       userName: name,
+      //       age: ageUser,
+      //     );
+      //   },
+      // )
+      //parameter passed parth
       GoRoute(
-        path: "/userdetails",
+        path: "/userdetails/:name/:userAge",
         builder: (context, state) {
-          final name = (state.extra as Map<String, dynamic>)["name"] as String;
-
-          final ageUser = (state.extra as Map<String, dynamic>)["ageUser"] as int;
-
           return UserDetails(
-            userName: name,
-            age: ageUser,
+            userName: state.pathParameters['name']!,
+            age: int.parse(state.pathParameters['userAge']!),
           );
         },
       )

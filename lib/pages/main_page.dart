@@ -32,8 +32,13 @@ class MainPage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              GoRouter.of(context).go("/userdetails",
-                  extra: {"name": "Ramesh Kaushika", "ageUser": 12,});
+              // GoRouter.of(context).go("/userdetails",
+              //     extra: {"name": "Ramesh Kaushika", "ageUser": 12,});
+            String name = Uri.encodeComponent("Ramesh Kaushika");  // Encode the name to handle spaces and special characters
+            int userAge = 21;
+
+            GoRouter.of(context).go("/userdetails/$name/$userAge");
+            
             },
             child: const Text("go to nested User Details"),
           ),
